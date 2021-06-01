@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+    scipy-notebook:
+        ports:
+            - '8888:8888'
+        environment:
+            - GRANT_SUDO=yes
+            - CHOWN_HOME=yes
+            - NB_USER=ben
+        volumes:
+            - '$PWD/notebooks:/home/ben'
+        image: jupyter/scipy-notebook
+        working_dir: /home/ben
+        user: root
